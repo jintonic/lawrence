@@ -1,30 +1,30 @@
 #!/bin/sh
-GROUP=/home/liu_lab/shared
-PATH=$GROUP/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
-CDPATH=.:$GROUP
-MANPATH=$GROUP/share/man:$GROUP/man
-LD_LIBRARY_PATH=$GROUP/lib:$GROUP/lib64
+PREFIX=/home/liu_lab/shared
+PATH=$PREFIX/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+CDPATH=.:$PREFIX
+MANPATH=$PREFIX/share/man:$PREFIX/man
+LD_LIBRARY_PATH=$PREFIX/lib:$PREFIX/lib64
 
 # ROOT
-ROOTSYS=$GROUP/src/root-6.14.06
+ROOTSYS=$PREFIX/src/root-6.14.06
 PATH=$ROOTSYS/bin:$PATH
 LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
 
 # go, https://github.com/odeke-em/drive & https://github.com/zyedidia/micro
-GOROOT=$GROUP/src/go-1.11.4 # compiler
+GOROOT=$PREFIX/src/go-1.11.4 # compiler
 PATH=$GOROOT/bin:$PATH
-GOPATH=$GROUP # where `go get` installs packages
+GOPATH=$PREFIX # where `go get` installs packages
 
 # perl
-eval "$(perl -I$GROUP/lib/perl5 -Mlocal::lib=$GROUP)"
+eval "$(perl -I$PREFIX/lib/perl5 -Mlocal::lib=$PREFIX)"
 
-# latex
-MANPATH=$GROUP/share/texlive/texmf-dist/doc/man:$MANPATH
-INFOPATH=$GROUP/share/texlive/texmf-dist/doc/info
-PATH=$GROUP/share/texlive/bin/x86_64-linux:$PATH
+# latex (texlive-2018)
+MANPATH=$PREFIX/share/texlive/texmf-dist/doc/man:$MANPATH
+INFOPATH=$PREFIX/share/texlive/texmf-dist/doc/info
+PATH=$PREFIX/share/texlive/bin/x86_64-linux:$PATH
 
 # geant4
-G4INSTALL=$GROUP/share/Geant4-10.5.0
+G4INSTALL=$PREFIX/share/Geant4-10.5.0
 export G4NEUTRONHPDATA=$G4INSTALL/data/G4NDL4.5
 export G4LEDATA=$G4INSTALL/data/G4EMLOW7.7
 export G4LEVELGAMMADATA=$G4INSTALL/data/PhotonEvaporation5.3
@@ -37,8 +37,18 @@ export G4ABLADATA=$G4INSTALL/data/G4ABLA3.1
 export G4INCLDATA=$G4INSTALL/data/G4INCL1.0
 export G4ENSDFSTATEDATA=$G4INSTALL/data/G4ENSDFSTATE2.2
 
+export G4VERBOSE=10
+
+export G4DAWNFILE_PS_VIEWER=evince
+export DAWN_PS_PREVIEWER=evince
+export DAWN_BATCH=1
+
+# nice
+export UNIC=$PREFIX
+export NICEDAT=$PREFIX/experiment/NICE/data
+export NICESYS=$PREFIX/src/nice
+
+# total
+export TOTAL_DATA_DIR=$PREFIX/share/total
+
 export PATH CDPATH MANPATH LD_LIBRARY_PATH INFOPATH GOPATH ROOTSYS
-
-## for GEANT4 cmake to find correct gcc:
-#export CC=/apps/spack/opt/spack/linux-centos7-x86_64/gcc-4.8.5/gcc-6.3.0-4gdmvol7flqoeidsehy6odhxujppkxux/bin/gcc
-
