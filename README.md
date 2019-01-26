@@ -3,8 +3,9 @@
 Please run the following commands to set up the working environment of our group at lawrence.usd.edu:
 
 ```sh
-echo "source /home/liu_lab/shared/profile" >> ~/.profile
-source ~/.profile
+echo "source ~/.bashrc" >> ~/.profile
+echo "source /home/liu_lab/shared/profile" >> ~/.bashrc
+source ~/.bashrc
 ```
 Note that this operation only needs to be done once. It takes permanent effect once set.
 
