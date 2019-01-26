@@ -4,6 +4,7 @@ PATH=$PREFIX/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
 CDPATH=.:$PREFIX
 MANPATH=$PREFIX/share/man:$PREFIX/man
 LD_LIBRARY_PATH=$PREFIX/lib:$PREFIX/lib64
+PKG_CONFIG_PATH=$PREFIX/lib64/pkgconfig:$PREFIX/lib/pkgconfig
 
 # ROOT
 ROOTSYS=$PREFIX/src/root-6.14.06
@@ -51,4 +52,4 @@ export NICESYS=$PREFIX/src/nice
 # total
 export TOTAL_DATA_DIR=$PREFIX/share/total
 
-export PATH CDPATH MANPATH LD_LIBRARY_PATH INFOPATH GOPATH ROOTSYS
+export PATH CDPATH MANPATH LD_LIBRARY_PATH PKG_CONFIG_PATH INFOPATH GOPATH ROOTSYS
