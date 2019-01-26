@@ -17,6 +17,9 @@ cat "PERL_HOMEDIR=0" > ~/.perl-homedir
 
 See `/etc/profile.d/perl-homedir.sh` for details.
 
+# slurm
+[SLURM](https://www.schedmd.com/) provides wrapper scripts to repackage its own commands as SGE commands. However, `qstat` has some delay in displaying status. One has to use `squeue` instead to see the latest status. Please refer to https://srcc.stanford.edu/sge-slurm-conversion for a list of conversion between SGE and SLURM.
+
 # Geant4
 
 ## Compilation parameters
