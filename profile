@@ -49,6 +49,7 @@ export TOTAL_DATA_DIR=$PREFIX/share/total
 
 export PATH CDPATH MANPATH LD_LIBRARY_PATH PKG_CONFIG_PATH INFOPATH GOPATH ROOTSYS
 
-# slurm
+# alias
 alias node='srun --pty bash'
 alias qstat='squeue'
+alias ds='source ~/local/g4ds.sh && cd ~/gitlab/g4ds10/Linux-g++ && ls'
