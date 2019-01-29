@@ -22,6 +22,7 @@ The last option is very important, otherwise `libPyROOT.so` cannot be compiled.
 ```sh
 # forward lawrence.usd.edu:8888 to local port 8000
 ssh -L 8000:localhost:8888 lawrence.usd.edu
+jupyter notebook --no-browser
 ```
 Now connect to localhost:8000 in a local browser.
 
