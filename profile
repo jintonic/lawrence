@@ -6,14 +6,9 @@ MANPATH=$PREFIX/share/man:$PREFIX/man
 LD_LIBRARY_PATH=$PREFIX/lib:$PREFIX/lib64
 PKG_CONFIG_PATH=$PREFIX/lib64/pkgconfig:$PREFIX/lib/pkgconfig
 
-# ROOT
-ROOTSYS=$PREFIX/src/root-6.14.06
-PATH=$ROOTSYS/bin:$PATH
-LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
-
 # go, https://github.com/odeke-em/drive & https://github.com/zyedidia/micro
 GOROOT=$PREFIX/src/go-1.11.4 # compiler
-PATH=$GOROOT/bin:$PATH
+PATH=$GOROOT/bin:$PATH # go
 GOPATH=$PREFIX # where `go get` installs packages
 
 # perl
@@ -53,3 +48,7 @@ export NICESYS=$PREFIX/src/nice
 export TOTAL_DATA_DIR=$PREFIX/share/total
 
 export PATH CDPATH MANPATH LD_LIBRARY_PATH PKG_CONFIG_PATH INFOPATH GOPATH ROOTSYS
+
+# slurm
+alias node='srun --pty bash'
+alias qstat='squeue'

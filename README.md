@@ -8,6 +8,22 @@ source ~/.profile
 ```
 Note that this operation only needs to be done once. It takes permanent effect once set.
 
+# python
+Python3 was compiled with the following configuration:
+```sh
+cd /path/to/python/src
+./configure --prefix=/home/liu_lab/shared --enable-shared
+make install
+```
+The last option is very important, otherwise `libPyROOT.so` cannot be compiled.
+
+## jupyter
+```sh
+# forward lawrence.usd.edu:8888 to local port 8000
+ssh -L 8000:localhost:8888 lawrence.usd.edu
+```
+Now connect to localhost:8000 in a local browser.
+
 # perl
 Run the following command to avoid creating the `~/perl5/` folder:
 
@@ -19,6 +35,16 @@ See `/etc/profile.d/perl-homedir.sh` for details.
 
 # slurm
 [SLURM](https://www.schedmd.com/) provides wrapper scripts to repackage its own commands as SGE commands. However, `qstat` has some delay in displaying status. One has to use `squeue` instead to see the latest status. Please refer to https://srcc.stanford.edu/sge-slurm-conversion for a list of conversion between SGE and SLURM.
+
+# ROOT
+```sh
+cd /path/to/root/src
+mkdir mybuild && cd mybuild
+cmake -DCMAKE_INSTALL_PREFIX=/home/liu_lab/shared -Dgminimal=ON -Dgdml=ON -Dopengl=ON -Dpython=ON ..
+make# make -j may create memory leak
+make install
+cp -r /home/liu_lab/shared/etc/notebook/kernels/root /home/liu_lab/shared/share/jupyter/kernels
+```
 
 # Geant4
 
@@ -36,9 +62,9 @@ cmake -DCMAKE_INSTALL_PREFIX=/home/liu_lab/shared -DGEANT4_INSTALL_DATA=ON -DGEA
 git clone git@gitlab.in2p3.fr:darkside/g4ds10.git
 cd g4ds10
 . /home/liu_lab/shared/g4ds.sh
-make
+make quiet=yes
 cd Linux-g++
-./g4ds licorne.mac
+./g4ds vis.mac Qt
 ```
 # FEniCS
 
