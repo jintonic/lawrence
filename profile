@@ -11,6 +11,11 @@ GOROOT=$PREFIX/src/go-1.11.4 # compiler
 PATH=$GOROOT/bin:$PATH # go
 GOPATH=$PREFIX # where `go get` installs packages
 
+# ROOT
+export ROOTSYS=$PREFIX/src/root-6.16.00/mybuild
+PATH=$ROOTSYS/bin:$PATH
+LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
+
 # perl
 eval "$(perl -I$PREFIX/lib/perl5 -Mlocal::lib=$PREFIX)"
 
