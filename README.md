@@ -47,6 +47,9 @@ cmake -DCMAKE_INSTALL_PREFIX=/home/liu_lab/shared -Dgminimal=ON -Dasimage=ON -Dg
 make# make -j may create memory leak
 make install
 cp -r /home/liu_lab/shared/etc/notebook/kernels/root /home/liu_lab/shared/share/jupyter/kernels
+cat "c.NotebookApp.ip = 'localhost'" >> ~/.rootnb/jupyter_notebook_config.py
+cat "c.NotebookApp.open_browser = False" >> ~/.rootnb/jupyter_notebook_config.py
+rootnb.exe
 ```
 
 # Geant4
