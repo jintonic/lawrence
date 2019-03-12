@@ -15,6 +15,7 @@ GOPATH=$PREFIX # where `go get` installs packages
 export ROOTSYS=$PREFIX/src/root-6.16.00/mybuild
 PATH=$ROOTSYS/bin:$PATH
 LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=$ROOTSYS/lib
 
 # perl
 eval "$(perl -I$PREFIX/lib/perl5 -Mlocal::lib=$PREFIX)"
@@ -52,7 +53,7 @@ export NICESYS=$PREFIX/src/nice
 # total
 export TOTAL_DATA_DIR=$PREFIX/share/total
 
-export PATH CDPATH MANPATH LD_LIBRARY_PATH PKG_CONFIG_PATH INFOPATH GOPATH ROOTSYS
+export PATH CDPATH MANPATH LD_LIBRARY_PATH PKG_CONFIG_PATH INFOPATH GOPATH
 
 # alias
 alias node='srun --pty bash'
