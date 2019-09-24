@@ -38,12 +38,21 @@ See `/etc/profile.d/perl-homedir.sh` for details.
 # slurm
 [SLURM](https://www.schedmd.com/) provides wrapper scripts to repackage its own commands as SGE commands. However, `qstat` has some delay in displaying status. One has to use `squeue` instead to see the latest status. Please refer to https://srcc.stanford.edu/sge-slurm-conversion for a list of conversion between SGE and SLURM, and http://rcg.usd.edu/docs for local instructions.
 
+# FFTW
+fftw3 is installed in `/home/liu_lab/shared/` with the following configuration:
+```
+configure --prefix=/home/liu_lab/shared --enable-shared --disable-static
+```
+The environment variable `$FFTW_DIR` was exported in `/home/liu_lab/shared/profile`:
+```sh
+export FFTW_DIR=/home/liu_lab/shared
+```
 # ROOT
-`asimage` is needed for GUI to find icons.
+`asimage` is needed for GUI to find icons. 
 ```sh
 cd /path/to/root/src
 mkdir mybuild && cd mybuild
-cmake -DCMAKE_INSTALL_PREFIX=/home/liu_lab/shared -Dgminimal=ON -Dasimage=ON -Dgdml=ON -Dopengl=ON -Dpython=ON ..
+cmake -DCMAKE_INSTALL_PREFIX=/home/liu_lab/shared -Dgminimal=ON -Dasimage=ON -Dgdml=ON -Dopengl=ON -Dpython=ON -Dfftw3=ON ..
 make# make -j may create memory leak
 make install
 cp -r /home/liu_lab/shared/etc/notebook/kernels/root /home/liu_lab/shared/share/jupyter/kernels
