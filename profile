@@ -12,6 +12,7 @@ PATH=$GOROOT/bin:$PATH # go
 GOPATH=$PREFIX # where `go get` installs packages
 
 # ROOT
+export FFTW_DIR=$PREFIX
 export ROOTSYS=$PREFIX/src/root-6.16.00/mybuild
 PATH=$ROOTSYS/bin:$PATH
 LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH
@@ -47,7 +48,7 @@ export DAWN_BATCH=1
 
 # nice
 export UNIC=$PREFIX
-export NICEDAT=$PREFIX/experiment/NICE/data
+export NICEDAT=$PREFIX/experiment/ICE/data
 export NICESYS=$PREFIX/src/nice
 
 # total
@@ -58,4 +59,4 @@ export PATH CDPATH MANPATH LD_LIBRARY_PATH PKG_CONFIG_PATH INFOPATH GOPATH
 # alias
 alias node='srun --pty bash'
 alias qstat='squeue'
-alias ds='source ~/local/g4ds.sh && cd ~/gitlab/g4ds10/Linux-g++ && ls'
+alias ds='source ~/local/g4ds.sh && cd ~/git/g4ds10/Linux-g++ && ls'
