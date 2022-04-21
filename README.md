@@ -9,6 +9,13 @@ source ~/.bashrc
 ```
 Note that this operation only needs to be done once. It takes permanent effect once set.
 
+# cmake
+```sh
+cd /home/liu_lab/shared/src/cmake-3.??.?
+./configure --prefix=/home/liu/lab/shared
+make install
+```
+
 # python
 Python3 was compiled with the following configuration:
 ```sh
