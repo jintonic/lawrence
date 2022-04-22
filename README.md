@@ -20,7 +20,7 @@ perl install-tl
 ```
 Change `TEXDIR` from `/home/liu_lab/shared/share/2022` to `/home/liu_lab/shared/share/texlive2022`
 
-After installation, add the following to `/home/liu_lab/shared/profile`
+After installation add the following to `/home/liu_lab/shared/profile`
 
 ```sh
 MANPATH=$PREFIX/share/texlive2022/texmf-dist/doc/man:$MANPATH
@@ -28,7 +28,12 @@ INFOPATH=$PREFIX/share/texlive2022/texmf-dist/doc/info
 PATH=$PREFIX/share/texlive2022/bin/x86_64-linux:$PATH
 ```
 
-Use `tlmgr install xxx` to install missing packages
+Use `tlmgr install xxx` to install missing packages. Run
+
+```sh
+tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet
+```
+to let `tlmgr` select the best repository automatically.
 
 # cmake
 ```sh
