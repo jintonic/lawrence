@@ -28,11 +28,18 @@ INFOPATH=$PREFIX/share/texlive2022/texmf-dist/doc/info
 PATH=$PREFIX/share/texlive2022/bin/x86_64-linux:$PATH
 ```
 
-Use `tlmgr install xxx` to install missing packages. Run
+Use `tlmgr install xxx` to install missing packages, for example,
+
+```sh
+tlmgr install sttools multirow newtxtt newtx breakurl preprint tabulary tocbibind
+```
+
+Run
 
 ```sh
 tlmgr option repository http://mirror.ctan.org/systems/texlive/tlnet
 ```
+
 to let `tlmgr` select the best repository automatically.
 
 # cmake

@@ -1,5 +1,6 @@
 .gd
 bin
+cmake
 etc
 experiment
 include
@@ -10,4 +11,5 @@ sing
 src
 lab
 doc/cmake*
+sbin
 tmp
