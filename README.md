@@ -9,6 +9,17 @@ source ~/.bashrc
 ```
 Note that this operation only needs to be done once. It takes permanent effect once set.
 
+# LaTeX
+
+```sh
+cd /home/liu_lab/shared/src
+wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+tar xfvz install-tl-unx.tar.gz
+cd install-tl-20220422
+perl install-tl
+```
+Change `TEXDIR` from `/home/liu_lab/shared/share/2022` to `/home/liu_lab/shared/share/texlive2022`
+
 # cmake
 ```sh
 cd /home/liu_lab/shared/src/cmake-3.??.?
